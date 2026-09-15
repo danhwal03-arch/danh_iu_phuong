@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dành cho Phương ❤️</title>
+    <link rel="stylesheet" href="dnhnguyn850.css">
+</head>
+
+<body>
+
+    <!-- PHÁT ÂM THANH NỀN KHỚP FILE MP3 TRONG THƯ MỤC -->
+    <audio id="bgMusic" src="IMG_20260915_222443_462_20260915_223607.mp3" loop preload="auto"></audio>
+
+    <!-- 1. MÀN HÌNH BAN ĐẦU -->
+    <div id="startScreen" class="screen">
+        <div class="envelope-container">
+            <!-- Tên file phong bì chuẩn: iu .jpg -->
+            <img src="iu .jpg" alt="Phong bì dành cho Phương" class="envelope">
+            <button id="openButton">💌 Dành cho Phương</button>
+        </div>
+    </div>
+
+    <!-- 2. MÀN HÌNH CÂU HỎI 1: CÒN GIẬN KHÔNG? -->
+    <div id="angryScreen" class="screen hidden">
+        <div class="messageBox">
+            <div class="heart">🥺</div>
+            <h1>Phương còn giận Danh không?</h1>
+            <div class="buttons">
+                <button id="angryYesBtn" class="btn-primary">Có 😿</button>
+                <button id="angryNoBtn" class="btn-secondary">Không 💖</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2A. MÀN HÌNH CHỌN CÓ (CÒN GIẬN) -->
+    <div id="sorryScreen" class="screen hidden">
+        <div class="messageBox">
+            <h1>Danh xin lỗi Phương nhiều 🥺</h1>
+            <img src="sad-pikachu.gif" alt="Pikachu buồn" class="cat-img">
+            <button id="toQuestionBtn" class="btn-primary" style="margin-top: 15px;">Tiếp tục 🐾</button>
+        </div>
+    </div>
+
+    <!-- 2B. MÀN HÌNH CHỌN KHÔNG (HẾT GIẬN) -->
+    <div id="thanksScreen" class="screen hidden">
+        <div class="messageBox">
+            <h1>Cảm ơn Phương nhé ❤️</h1>
+            <img src="D9qEz3qQ.jpg" alt="Mèo I LOVE U" class="cat-img">
+            <button id="toQuestionBtn2" class="btn-primary" style="margin-top: 15px;">Tiếp tục 🐾</button>
+        </div>
+    </div>
+
+    <!-- 3. MÀN HÌNH CÂU HỎI 2: PHƯƠNG CÓ IU ANH KHÔNG? -->
+    <div id="questionScreen" class="screen hidden">
+        <div class="messageBox">
+            <div class="heart">❤️</div>
+            <h1>Phương có iu Danh không?</h1>
+            <div class="buttons">
+                <button id="yesButton" class="btn-primary">Có ❤️</button>
+                <button id="noButton" class="btn-secondary">Không 😜</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. MÀN HÌNH LỜI NHẮN CUỐI CÙNG -->
+    <div id="loveScreen" class="screen hidden">
+        <div class="loveBox">
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <script src="dnhnguyn850.js"></script>
+
+</body>
+</html>

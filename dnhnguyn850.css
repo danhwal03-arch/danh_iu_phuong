@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #fce4ec;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Khung màn hình mở đầu */
+#startScreen {
+    background: url('yourname2.') no-repeat center center/cover;
+    background-color: #ffcdd2;
+}
+
+.envelope-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(85vw, 420px);
+}
+
+.envelope {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    object-fit: contain;
+}
+
+#openButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #ed4f68;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+
+#openButton:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* Các màn hình tiếp theo */
+#angryScreen, #sorryScreen, #thanksScreen, #questionScreen, #loveScreen {
+    background: url('hearts.jpg') no-repeat center center/cover;
+    background-color: #f8bbd0;
+}
+
+.messageBox {
+    position: relative; /* Giữ các nút dịch chuyển giới hạn theo khung này */
+    background: rgba(237, 143, 160, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    width: min(90vw, 400px);
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart {
+    font-size: 55px;
+    margin-bottom: 10px;
+    animation: heartbeat 1.2s infinite;
+}
+
+.messageBox h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.cat-img {
+    width: 160px;
+    height: auto;
+    border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+/* Khung chứa các nút bấm */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    min-height: 50px;
+}
+
+.buttons button, .btn-primary {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.btn-primary {
+    background: #ed4f68;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: white;
+    color: #444;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Nút không nhảy linh hoạt nhưng mượt */
+#noButton {
+    transition: transform 0.15s ease-out;
+    touch-action: manipulation;
+}
+
+.loveBox {
+    width: min(90vw, 650px);
+    min-height: 200px;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(237, 143, 160, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+#message {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* Tối ưu hóa giao diện di động */
+@media (max-width: 480px) {
+    .messageBox h1 { font-size: 20px; }
+    .buttons button { padding: 10px 20px; font-size: 15px; }
+    #message { font-size: 20px; }
+}
